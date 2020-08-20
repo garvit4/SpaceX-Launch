@@ -6,7 +6,9 @@ import { BOOLEAN_FILTER_ARR, QUERY_OPTIONS, BASE_URL } from "../App.constant";
 const Card = styled.div`
   background-color: white;
   border-radius: 5px;
-  width: 300px;
+  width: 310px;
+  padding-bottom: 40px;
+  padding-top: 3px;
 `;
 const CardHeader = styled.h3`
   margin-left: 10px;
@@ -15,6 +17,9 @@ const CardSubHeader = styled.h5`
   margin: 10px;
   text-decoration: underline;
   text-align: center;
+`;
+const WrapOptions = styled.div`
+  padding: 0px 15px;
 `;
 const Filter = (props) => {
   const [launchArr, setLaunchArr] = useState([]);
@@ -56,23 +61,29 @@ const Filter = (props) => {
     <Card>
       <CardHeader>Filters</CardHeader>
       <CardSubHeader>Launch Year</CardSubHeader>
-      <FilterOption
-        arr={launchArr}
-        query={QUERY_OPTIONS.launchYear}
-        onChange={handleFilterChange}
-      />
+      <WrapOptions>
+        <FilterOption
+          arr={launchArr}
+          query={QUERY_OPTIONS.launchYear}
+          onChange={handleFilterChange}
+        />
+      </WrapOptions>
       <CardSubHeader>Successful Launch</CardSubHeader>
-      <FilterOption
-        arr={BOOLEAN_FILTER_ARR}
-        query={QUERY_OPTIONS.launchSuccess}
-        onChange={handleFilterChange}
-      />
+      <WrapOptions>
+        <FilterOption
+          arr={BOOLEAN_FILTER_ARR}
+          query={QUERY_OPTIONS.launchSuccess}
+          onChange={handleFilterChange}
+        />
+      </WrapOptions>
       <CardSubHeader>Successful Landing</CardSubHeader>
-      <FilterOption
-        arr={BOOLEAN_FILTER_ARR}
-        query={QUERY_OPTIONS.landSuccess}
-        onChange={handleFilterChange}
-      />
+      <WrapOptions>
+        <FilterOption
+          arr={BOOLEAN_FILTER_ARR}
+          query={QUERY_OPTIONS.landSuccess}
+          onChange={handleFilterChange}
+        />
+      </WrapOptions>
     </Card>
   );
 };
