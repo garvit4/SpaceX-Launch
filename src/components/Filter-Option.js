@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 `;
+
 const FilterButton = styled.button`
   width: 90px;
   height: 35px;
@@ -43,4 +44,5 @@ const FilterOption = (props) => {
     </Wrapper>
   );
 };
+
 export default FilterOption;

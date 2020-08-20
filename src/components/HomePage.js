@@ -11,19 +11,29 @@ const Wrapper = styled.div`
 const PageHeader = styled.h3`
   margin-left: 10px;
 `;
-
 const CardWrapper = styled.div`
-  flex: 0.7;
+  flex-basis: 80%;
+  flex-direction: row;
+  display: inline-flex;
   flex-wrap: wrap;
+  margin-left: 20px;
+  @media (max-width: 700px) {
+    margin: 0;
+  }
 `;
-
 const ContentWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `;
-
 const FilterWrapper = styled.div`
-  flex: 0.3;
+  flex-basis: 20%;
+`;
+const FooterText = styled.footer`
+  display: flex;
+  justify-content: center;
 `;
 
 const Homepage = () => {
@@ -48,7 +58,7 @@ const Homepage = () => {
   return (
     <Wrapper>
       <PageHeader> SpaceX Launch Programs</PageHeader>
-      <ContentWrapper className="flex-container">
+      <ContentWrapper>
         <FilterWrapper>
           <Filter onChange={handleCardArr} />
         </FilterWrapper>
@@ -58,7 +68,9 @@ const Homepage = () => {
           })}
         </CardWrapper>
       </ContentWrapper>
-      <footer>Developed by: Garvit Arora</footer>
+      <FooterText>
+        <b>Developed by: </b> Garvit Arora
+      </FooterText>
     </Wrapper>
   );
 };

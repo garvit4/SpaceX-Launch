@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
   background-color: white;
   border-radius: 5px;
-  margin: 20px 0px;
+  margin: 0px 20px 20px 0;
   display: flex;
   padding: 20px;
   flex-direction: column;
-  max-width: 310px;
+  width: 270px;
+  height: 430px;
+  @media (max-width: 700px) {
+    margin: 20px 0;
+    width: 100%;
+  }
 `;
 
 const FlexRows = styled.div`
@@ -28,6 +33,7 @@ const ImageContainer = styled.div`
 `;
 
 const Title = styled.h4`
+  width: 200px;
   color: #7177ae;
   margin: 2px 10px;
 `;

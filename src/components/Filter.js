@@ -10,17 +10,21 @@ const Card = styled.div`
   padding-bottom: 40px;
   padding-top: 3px;
 `;
+
 const CardHeader = styled.h3`
   margin-left: 10px;
 `;
+
 const CardSubHeader = styled.h5`
   margin: 10px;
   text-decoration: underline;
   text-align: center;
 `;
+
 const WrapOptions = styled.div`
   padding: 0px 15px;
 `;
+
 const Filter = (props) => {
   const [launchArr, setLaunchArr] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState({});
