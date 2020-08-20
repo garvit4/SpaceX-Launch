@@ -6,9 +6,12 @@ import { BOOLEAN_FILTER_ARR, QUERY_OPTIONS, BASE_URL } from "../App.constant";
 const Card = styled.div`
   background-color: white;
   border-radius: 5px;
-  width: 310px;
+  width: 270px;
   padding-bottom: 40px;
   padding-top: 3px;
+  @media (max-width: 700px) {
+    width: 310px;
+  }
 `;
 
 const CardHeader = styled.h3`

@@ -8,8 +8,8 @@ const Wrapper = styled.div`
   display: flex;
   padding: 20px;
   flex-direction: column;
-  width: 270px;
-  height: 430px;
+  width: 200px;
+  height: 370px;
   @media (max-width: 700px) {
     margin: 20px 0;
     width: 100%;
@@ -24,8 +24,8 @@ const FlexRows = styled.div`
 `;
 
 const ImageSrc = styled.img`
-  width: 250px;
-  height: 270px;
+  width: 170px;
+  height: 220px;
 `;
 
 const ImageContainer = styled.div`

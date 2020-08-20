@@ -34,6 +34,7 @@ const FilterWrapper = styled.div`
 const FooterText = styled.footer`
   display: flex;
   justify-content: center;
+  margin-top: 15px;
 `;
 
 const Homepage = () => {
