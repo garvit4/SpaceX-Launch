@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/SpaceX-Launch/static/css/main.0f51d6b0.chunk.css",
-    "main.js": "/SpaceX-Launch/static/js/main.4c667416.chunk.js",
-    "main.js.map": "/SpaceX-Launch/static/js/main.4c667416.chunk.js.map",
+    "main.css": "/SpaceX-Launch/static/css/main.139422e3.chunk.css",
+    "main.js": "/SpaceX-Launch/static/js/main.91ae5beb.chunk.js",
+    "main.js.map": "/SpaceX-Launch/static/js/main.91ae5beb.chunk.js.map",
     "runtime-main.js": "/SpaceX-Launch/static/js/runtime-main.767c403f.js",
     "runtime-main.js.map": "/SpaceX-Launch/static/js/runtime-main.767c403f.js.map",
     "static/js/2.425df803.chunk.js": "/SpaceX-Launch/static/js/2.425df803.chunk.js",
     "static/js/2.425df803.chunk.js.map": "/SpaceX-Launch/static/js/2.425df803.chunk.js.map",
     "index.html": "/SpaceX-Launch/index.html",
-    "precache-manifest.91187d554620273f17d41737e246bbf5.js": "/SpaceX-Launch/precache-manifest.91187d554620273f17d41737e246bbf5.js",
+    "precache-manifest.f6bd2395184bc768b10ba48cc514b091.js": "/SpaceX-Launch/precache-manifest.f6bd2395184bc768b10ba48cc514b091.js",
     "service-worker.js": "/SpaceX-Launch/service-worker.js",
-    "static/css/main.0f51d6b0.chunk.css.map": "/SpaceX-Launch/static/css/main.0f51d6b0.chunk.css.map",
+    "static/css/main.139422e3.chunk.css.map": "/SpaceX-Launch/static/css/main.139422e3.chunk.css.map",
     "static/js/2.425df803.chunk.js.LICENSE.txt": "/SpaceX-Launch/static/js/2.425df803.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.767c403f.js",
     "static/js/2.425df803.chunk.js",
-    "static/css/main.0f51d6b0.chunk.css",
-    "static/js/main.4c667416.chunk.js"
+    "static/css/main.139422e3.chunk.css",
+    "static/js/main.91ae5beb.chunk.js"
   ]
 }
