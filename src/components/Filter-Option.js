@@ -5,15 +5,40 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media (max-width: 700px) {
+    margin: 10px;
+    padding: 0px 10px;
+  }
+  @media (min-width: 1024px) {
+    margin: 0px 6px;
+  }
 `;
 
 const FilterButton = styled.button`
   width: 90px;
   height: 35px;
-  border-radius: 10px;
+  border-radius: 7px;
   margin: 10px;
   border: none;
   outline: none;
+  @media (max-width: 700px) {
+    width: 70px;
+    height: 30px;
+    margin: 10px 20px 10px 20px;
+  }
+  @media (min-width: 700px) and (max-width: 1024px) {
+    width: 70px;
+    height: 30px;
+    margin: 10px;
+  }
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    width: 50px;
+    height: 30px;
+  }
+  @media (min-width: 1200px) {
+    width: 70px;
+    height: 30px;
+  }
 `;
 
 const FilterOption = (props) => {
@@ -32,6 +57,7 @@ const FilterOption = (props) => {
       {arr.map((item) => {
         return (
           <FilterButton
+            key={item}
             onClick={() => handleButtonClick(item)}
             style={{
               backgroundColor: selected === item ? "#7cba01" : "#c5e09b",

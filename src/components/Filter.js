@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import FilterOption from "./Filter-Option";
 import { BOOLEAN_FILTER_ARR, QUERY_OPTIONS, BASE_URL } from "../App.constant";
@@ -6,16 +6,25 @@ import { BOOLEAN_FILTER_ARR, QUERY_OPTIONS, BASE_URL } from "../App.constant";
 const Card = styled.div`
   background-color: white;
   border-radius: 5px;
-  width: 270px;
+  width: 200px;
   padding-bottom: 40px;
   padding-top: 3px;
   @media (max-width: 700px) {
-    width: 310px;
+    width: 300px;
+  }
+  @media (min-width: 870px) and (max-width: 1023px) {
+    width: 205px;
+  }
+  @media (min-width: 1024px) {
+    width: 175px;
+  }
+  @media (min-width: 1200px) {
+    width: 220px;
   }
 `;
 
-const CardHeader = styled.h3`
-  margin-left: 10px;
+const CardHeader = styled.h4`
+  margin: 10px;
 `;
 
 const CardSubHeader = styled.h5`
@@ -24,28 +33,24 @@ const CardSubHeader = styled.h5`
   text-align: center;
 `;
 
-const WrapOptions = styled.div`
-  padding: 0px 15px;
-`;
-
 const Filter = (props) => {
-  const [launchArr, setLaunchArr] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState({});
 
-  useEffect(() => {
+  const calcFilterArr = () => {
     const tempLaunchArr = [];
     for (let i = 2006; i <= 2020; i++) {
       tempLaunchArr.push(i);
     }
-    setLaunchArr(tempLaunchArr);
-  }, []);
+    return tempLaunchArr;
+  };
 
   const constructAPIUrl = (filters) => {
     if (filters) {
       let queryStr = "";
       for (const key in filters) {
         if (filters.hasOwnProperty(key)) {
-          queryStr += `&${key}=${filters[key]}`;
+          const lowerVal = `${filters[key]}`.toLowerCase();
+          queryStr += `&${key}=${lowerVal}`;
         }
       }
       return `${BASE_URL}${queryStr}`;
@@ -57,40 +62,36 @@ const Filter = (props) => {
       const combineObj = Object.assign(selectedFilters, data);
       setSelectedFilters(combineObj);
       const url = constructAPIUrl(selectedFilters);
-      fetch(url)
-        .then((res) => res.json())
-        .then((json) => {
-          props.onChange(json);
-        });
+      props.onChange(url);
     }
   };
   return (
     <Card>
       <CardHeader>Filters</CardHeader>
       <CardSubHeader>Launch Year</CardSubHeader>
-      <WrapOptions>
+      <div>
         <FilterOption
-          arr={launchArr}
+          arr={calcFilterArr()}
           query={QUERY_OPTIONS.launchYear}
           onChange={handleFilterChange}
         />
-      </WrapOptions>
+      </div>
       <CardSubHeader>Successful Launch</CardSubHeader>
-      <WrapOptions>
+      <div>
         <FilterOption
           arr={BOOLEAN_FILTER_ARR}
           query={QUERY_OPTIONS.launchSuccess}
           onChange={handleFilterChange}
         />
-      </WrapOptions>
+      </div>
       <CardSubHeader>Successful Landing</CardSubHeader>
-      <WrapOptions>
+      <div>
         <FilterOption
           arr={BOOLEAN_FILTER_ARR}
           query={QUERY_OPTIONS.landSuccess}
           onChange={handleFilterChange}
         />
-      </WrapOptions>
+      </div>
     </Card>
   );
 };

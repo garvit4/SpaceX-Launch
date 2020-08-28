@@ -6,13 +6,26 @@ const Wrapper = styled.div`
   border-radius: 5px;
   margin: 0px 20px 20px 0;
   display: flex;
-  padding: 20px;
+  padding: 15px;
   flex-direction: column;
-  width: 200px;
-  height: 370px;
+  width: 150px;
+  height: 330px;
   @media (max-width: 700px) {
-    margin: 20px 0;
     width: 100%;
+    height: 380px;
+    margin: 20px 0;
+  }
+  @media (min-width: 870px) and (max-width: 1024px) {
+    width: 210px;
+    height: 350px;
+  }
+  @media (min-width: 1024px) {
+    margin: 10px;
+    padding: 10px;
+  }
+  @media (min-width: 1200px) {
+    width: 180px;
+    height: 350px;
   }
 `;
 
@@ -24,23 +37,40 @@ const FlexRows = styled.div`
 `;
 
 const ImageSrc = styled.img`
-  width: 170px;
-  height: 220px;
+  width: 150px;
+  height: 150px;
+  @media (max-width: 700px) {
+    width: 250px;
+    height: 220px;
+  }
+  @media (min-width: 870px) and (max-width: 1024px) {
+    width: 200px;
+    height: 210px;
+  }
+  @media (min-width: 1200px) {
+    width: 170px;
+    height: 200px;
+  }
 `;
 
 const ImageContainer = styled.div`
   background-color: #f2f2f2;
 `;
 
-const Title = styled.h4`
-  width: 200px;
+const Title = styled.h5`
   color: #7177ae;
   margin: 2px 10px;
+  @media (max-width: 700px) {
+    font-size: 1em;
+  }
 `;
 
-const MissionTitle = styled.h4`
+const MissionTitle = styled.h6`
   color: #191919;
   margin: 2px 10px;
+  @media (max-width: 700px) {
+    font-size: 0.8em;
+  }
 `;
 
 const MissionIdUl = styled.ul`
@@ -49,11 +79,11 @@ const MissionIdUl = styled.ul`
 
 const MissionIdli = styled.li`
   color: #7177ae;
-  font-size: 14px;
+  font-size: 0.8em;
 `;
 
 const FilterRows = styled.h4`
-  font-size: 14px;
+  font-size: 0.8em;
   margin: 3px 0px 3px 10px;
 `;
 
@@ -63,7 +93,6 @@ const FilterValue = styled.span`
 `;
 
 const Card = (props) => {
-  console.log(props, "--> props inside Card");
   const { cardObj } = props;
   return (
     <Wrapper>
@@ -77,7 +106,7 @@ const Card = (props) => {
       <MissionIdUl>
         {cardObj["mission_id"].length ? (
           cardObj["mission_id"].map((id) => {
-            return <MissionIdli>{id}</MissionIdli>;
+            return <MissionIdli key={id}>{id}</MissionIdli>;
           })
         ) : (
           <MissionIdli>Not Available</MissionIdli>
@@ -93,7 +122,9 @@ const Card = (props) => {
       <FilterRows>
         Successful Landing:
         <FilterValue>
-          {cardObj["launch_landing"] && "" + cardObj["launch_landing"]}
+          {cardObj["rocket"]["first_stage"]["cores"][0]["land_success"] === null
+            ? "None"
+            : `${cardObj["rocket"]["first_stage"]["cores"][0]["land_success"]}`}
         </FilterValue>
       </FilterRows>
     </Wrapper>

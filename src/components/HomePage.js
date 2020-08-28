@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Filter from "./Filter";
 import Card from "./Card";
@@ -20,6 +20,9 @@ const CardWrapper = styled.div`
   @media (max-width: 700px) {
     margin: 0;
   }
+  @media (min-width: 1024px) {
+    margin-left: 13px;
+  }
 `;
 const ContentWrapper = styled.div`
   display: flex;
@@ -38,13 +41,12 @@ const FooterText = styled.footer`
 `;
 
 const Homepage = () => {
-  const [respArr, setRespArr] = useState([]);
-  const handleCardArr = (arr) => {
-    setRespArr(arr);
-  };
+  const [respArr, setRespArr] = React.useState([]);
 
-  const getData = () => {
-    let url = BASE_URL;
+  const handleCardArr = (updatedUrl) => {
+    getData(updatedUrl);
+  };
+  const getData = (url = BASE_URL) => {
     fetch(url)
       .then((res) => res.json())
       .then((json) => {
@@ -52,7 +54,7 @@ const Homepage = () => {
       });
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     getData();
   }, []);
 
@@ -65,12 +67,12 @@ const Homepage = () => {
         </FilterWrapper>
         <CardWrapper>
           {respArr.map((item) => {
-            return <Card cardObj={item} />;
+            return <Card key={item.flight_number} cardObj={item} />;
           })}
         </CardWrapper>
       </ContentWrapper>
       <FooterText>
-        <b>Developed by: </b> Garvit Arora
+        <b>Developed by:</b>Garvit Arora
       </FooterText>
     </Wrapper>
   );

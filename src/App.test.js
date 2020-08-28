@@ -1,9 +1,10 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, cleanup } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+afterEach(cleanup);
+test("should render page title", () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
+  const linkElement = getByText(/SpaceX /i);
   expect(linkElement).toBeInTheDocument();
 });
