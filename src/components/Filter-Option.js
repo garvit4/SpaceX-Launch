@@ -22,7 +22,6 @@ const FilterButton = styled.button`
   border: none;
   outline: none;
   @media (max-width: 700px) {
-    width: 70px;
     height: 30px;
     margin: 10px 20px 10px 20px;
   }

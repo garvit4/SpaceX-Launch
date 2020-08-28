@@ -9,7 +9,10 @@ const Card = styled.div`
   width: 200px;
   padding-bottom: 40px;
   padding-top: 3px;
-  @media (max-width: 700px) {
+  @media (max-width: 450px) {
+    width: 100%;
+  }
+  @media (min-width: 450px) and (max-width: 700px) {
     width: 300px;
   }
   @media (min-width: 870px) and (max-width: 1023px) {
