@@ -7,6 +7,9 @@ import { BASE_URL } from "../App.constant";
 const Wrapper = styled.div`
   background-color: #ececec;
   padding: 30px;
+  @media (min-width: 1340px) {
+    padding: 30px 100px;
+  }
 `;
 const PageHeader = styled.h3`
   margin-left: 10px;
