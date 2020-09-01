@@ -36,6 +36,7 @@ const ContentWrapper = styled.div`
 `;
 const FilterWrapper = styled.div`
   flex-basis: 20%;
+  margin-top: 10px;
 `;
 const FooterText = styled.footer`
   display: flex;

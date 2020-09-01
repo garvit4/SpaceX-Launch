@@ -10,7 +10,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   width: 150px;
   height: 330px;
-  @media (max-width: 700px) {
+  @media (max-width: 330px) {
+    width: 88%;
+    height: 380px;
+    margin: 10px 0 0 0;
+  }
+  @media (min-width: 330px) and (max-width: 700px) {
     width: 100%;
     height: 380px;
     margin: 20px 0;
@@ -27,6 +32,9 @@ const Wrapper = styled.div`
     width: 180px;
     height: 350px;
   }
+  @media (min-width: 1420px) {
+    margin-right: 1.8em;
+  }
 `;
 
 const FlexRows = styled.div`
@@ -39,7 +47,11 @@ const FlexRows = styled.div`
 const ImageSrc = styled.img`
   width: 150px;
   height: 150px;
-  @media (max-width: 700px) {
+  @media (max-width: 330px) {
+    width: 200px;
+    height: 200px;
+  }
+  @media (min-width: 330px) and (max-width: 700px) {
     width: 250px;
     height: 220px;
   }

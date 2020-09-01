@@ -5,7 +5,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  @media (max-width: 700px) {
+  @media (max-width: 330px) {
+    margin: 10px;
+    padding: 0;
+  }
+  @media (min-width: 330px) and (max-width: 700px) {
     margin: 10px;
     padding: 0px 10px;
   }
@@ -21,6 +25,7 @@ const FilterButton = styled.button`
   margin: 10px;
   border: none;
   outline: none;
+
   @media (max-width: 700px) {
     width: 70px;
     height: 30px;
